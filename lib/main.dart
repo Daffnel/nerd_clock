@@ -18,9 +18,10 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("The Nerd Watch", style: TextStyle(color: Colors.white, fontSize: 34)),
+              Text("Nerd Clock", style: TextStyle(color: Colors.white, fontSize: 34)),
+
+              //Row(children: [LedWidget(number: 5), LedWidget(number: 3)]),
               ClockContainer(),
-              Row(children: [LedWidget(number: 5), LedWidget(number: 3)]),
             ],
           ),
         ),

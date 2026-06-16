@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'dart:async';
 
+import 'package:nerd_clock/led.dart';
+
 class ClockContainer extends StatefulWidget {
   const ClockContainer({super.key});
 
@@ -22,11 +24,14 @@ class _ClockContainerState extends State<ClockContainer> {
     final String formattedDateTime = _formatDateTime(now);
     setState(() {
       _timeString = formattedDateTime;
+
       //trim and Split each digit
+      _clockDigits = _timeString
+          .split(':')
+          .expand((number) => number.toString().split('').map(int.parse))
+          .toList();
 
-      _clockDigits = _timeString.split(':').map(int.parse).toList();
-
-      debugPrint("Klockan: $_clockDigits");
+      debugPrint(_clockDigits.toString());
     });
   }
 
@@ -39,6 +44,22 @@ class _ClockContainerState extends State<ClockContainer> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(child: Text("Mothha fuc...."));
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ..._clockDigits.map((item) {
+              return Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: (LedWidget(number: item)),
+              );
+            }),
+          ],
+        ),
+        SizedBox(height: 16),
+        Text(_timeString, style: TextStyle(letterSpacing: 18, color: Colors.white, fontSize: 24)),
+      ],
+    );
   }
 }
