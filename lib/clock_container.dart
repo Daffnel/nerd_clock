@@ -30,8 +30,6 @@ class _ClockContainerState extends State<ClockContainer> {
           .split(':')
           .expand((number) => number.toString().split('').map(int.parse))
           .toList();
-
-      debugPrint(_clockDigits.toString());
     });
   }
 
@@ -58,7 +56,7 @@ class _ClockContainerState extends State<ClockContainer> {
           ],
         ),
         SizedBox(height: 16),
-        Text(_timeString, style: TextStyle(letterSpacing: 18, color: Colors.white, fontSize: 24)),
+        // Text(_timeString, style: TextStyle(letterSpacing: 18, color: Colors.white, fontSize: 24)),
       ],
     );
   }

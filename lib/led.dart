@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget led_light(bool isOn) {
+Widget ledLight(bool isOn) {
   return Container(
     width: 24,
     height: 24,
@@ -26,13 +26,13 @@ class LedWidget extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(height: 30),
-          led_light(number & 8 != 0),
+          ledLight(number & 8 != 0),
           SizedBox(height: 12),
-          led_light(number & 4 != 0),
+          ledLight(number & 4 != 0),
           SizedBox(height: 12),
-          led_light(number & 2 != 0),
+          ledLight(number & 2 != 0),
           SizedBox(height: 12),
-          led_light(number & 1 != 0),
+          ledLight(number & 1 != 0),
         ],
       ),
     );

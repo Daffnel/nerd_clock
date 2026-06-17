@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nerd_clock/led.dart';
+
 import 'clock_container.dart';
 
 void main() {
@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Nerd Clock", style: TextStyle(color: Colors.white, fontSize: 34)),
+              Text("Klocka...", style: TextStyle(color: Colors.white, fontSize: 34)),
 
               //Row(children: [LedWidget(number: 5), LedWidget(number: 3)]),
               ClockContainer(),
